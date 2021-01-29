@@ -282,7 +282,7 @@ spec:
                       fieldPath: metadata.name
                 - name: OPERATOR_NAME
                   value: antrea-operator
-                image: antrea/antrea-operator:v0.0.1
+                image: projects.registry.vmware.com/antrea/antrea-operator:0.0.8
                 imagePullPolicy: IfNotPresent
                 name: antrea-operator
                 resources: {}
