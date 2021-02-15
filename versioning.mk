@@ -39,7 +39,7 @@ endif
 BUNDLE_IMG ?= antrea/antrea-operator-bundle:$(OPERATOR_IMG)
 
 # Image URL to use all building/pushing image targets
-IMG ?= antrea/antrea-operator:$(OPERATOR_IMG)
+IMG ?= salvorlando/antrea-operator:$(OPERATOR_IMG)
 
 version-info:
 	@echo "===> Version information <==="
