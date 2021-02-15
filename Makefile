@@ -89,7 +89,7 @@ generate: controller-gen
 # Build the docker image
 docker-build:
 	docker build -f build/Dockerfile . -t ${IMG}
-	docker tag ${IMG} antrea/antrea-operator
+	docker tag ${IMG} salvorlando/antrea-operator
 
 
 # find or download controller-gen
