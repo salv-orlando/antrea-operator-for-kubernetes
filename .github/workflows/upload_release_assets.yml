@@ -25,3 +25,12 @@ jobs:
         asset_path: ./assets/ocp4.tar.gz
         asset_name: ocp4.tar.gz
         asset_content_type: application/octet-stream
+    - name: Upload bundle image tarball
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./assets/bundle-image.tar.gz
+        asset_name: bundle-image.tar.gz
+        asset_content_type: application/octet-stream

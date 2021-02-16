@@ -42,6 +42,7 @@ mkdir -p "$1"
 OUTPUT_DIR=$(cd "$1" && pwd)
 
 OPERATOR_IMG_NAME="antrea/antrea-operator"
+# Prepare tarball with deployment yaml
 # Each platform specified here must match a subdirector of the 'deploy' directory
 OPERATOR_PLATFORMS=(
     "ocp4"
@@ -64,5 +65,10 @@ for platform in "${OPERATOR_PLATFORMS[@]}"; do
     rm -rf ${platform}
     popd > /dev/null
 done
+
+# Prepare the bundle image
+make bundle-build
+docker save antrea/antrea-operator-bundle > ${OUTPUT_DIR}/bundle-image.tar
+gzip ${OUTPUT_DIR}/bundle-image.tar
 
 ls "$OUTPUT_DIR" | cat
